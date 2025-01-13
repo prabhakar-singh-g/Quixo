@@ -46,6 +46,7 @@ Follow these steps to set up and run the Quixo app on your device:
 2. **Clone the Repository:**  
    ```bash
    git clone https://github.com/Prabhakar-Singh-G/Quixo.git
+   cd Quixo
    ``` 
 3. **Install Dependencies:**  
    ```bash
