@@ -1,0 +1,23 @@
+{
+  "name": "quixo",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx cap sync"
+  },
+  "keywords": [
+    "capacitor",
+    "quixo",
+    "notes app"
+  ],
+  "author": "Prabhakar Singh",
+  "license": "MIT",
+  "type": "module",
+  "description": "Quixo is a personal productivity and notes app built with Capacitor, HTML, CSS, and JavaScript.",
+  "dependencies": {
+    "@capacitor/android": "^6.2.0",
+    "@capacitor/cli": "^6.2.0",
+    "@capacitor/core": "^6.2.0"
+  }
+}
