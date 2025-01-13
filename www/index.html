@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quixo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Quixo</h1>
+  
+  <div class="toggles">
+    <button id="lightDarkToggle" class="toggle-button">👁️</button>
+    <button id="settingsToggle" class="toggle-button">📖</button>
+  </div>
+
+  <!-- Quote App Box -->
+  <section class="app-box">
+    <h2>Quote</h2>
+    <div id="quoteBox" class="non scrollable">
+        <p class="quote-list"></p>
+    </div>
+    <button class="manage-button" onclick="toggleManageSection('quoteSection')" style="display: none">Manage</button>
+    <div id="quoteSection" class="manage-section">
+        <textarea id="quoteInput" placeholder="Enter your quote here..."></textarea>
+        <button class="pill-button add-btn" onclick="addQuote()">Add</button>
+        <select id="quoteSelect">
+            <option>Select your quote here...</option>
+        </select>
+        <button class="pill-button remove-btn" onclick="removeQuote()">Remove</button>
+    </div>
+  </section>
+
+  <!-- To-Do List App Box -->
+  <section class="app-box">
+    <h2>To-Do List</h2>
+    <div id="todolistBox" class="scrollable">
+        <ul class="todolist"></ul>
+    </div>
+    <button class="manage-button" onclick="toggleManageSection('todolistSection')" style="display: none">Manage</button>
+    
+    <div id="todolistSection" class="manage-section">
+        <div class="priority-buttons">
+            <button class="priority-btn" id="mostImportantBtn" onclick="setPriority('mostImportant')">High</button>
+            <button class="priority-btn selected" id="importantBtn" onclick="setPriority('important')">Medium</button>
+            <button class="priority-btn" id="lessImportantBtn" onclick="setPriority('lessImportant')">Low</button>
+        </div>
+        <textarea id="todoInput" placeholder="Enter your task here..."></textarea>
+        <button class="pill-button add-btn" onclick="addTodo()">Add</button>
+        <select id="todoSelect">
+            <option>Select your task here...</option>
+        </select>
+        <button class="pill-button remove-btn" onclick="removeTodo()">Remove</button>
+    </div>
+  </section>
+
+  <!-- Memoir App Box -->
+  <section class="app-box">
+    <h2>Memoir</h2>
+    <div id="memoirBox" class="scrollable">
+      <ul class="memoir-list"></ul>
+    </div>
+    <button class="manage-button" onclick="toggleManageSection('memoirSection')"style="display: none">Manage</button>
+
+    <div id="memoirSection" class="manage-section">
+      <!-- Select for Add, Edit, Remove -->
+      <select id="manageSelect" onchange="handleManageChange()">
+        <option value="">Select your action here...</option>
+        <option value="add">Add</option>
+        <option value="edit">Edit</option>
+        <option value="remove">Remove</option>
+      </select>
+
+      <!-- Add Section -->
+      <div id="addSection" style="display:none;">
+        <input type="text" id="memoirTitle" placeholder="Enter Memoir Title">
+        <textarea id="memoirContent" placeholder="Write your memoir here..."></textarea>
+        <button class="pill-button add-btn" onclick="addMemoir()">Add</button>
+      </div>
+
+      <!-- Edit Section -->
+      <div id="editSection" style="display:none;">
+        <select id="memoirSelect" onchange="loadMemoirForEdit()">
+          <option value="">Select Memoir Title</option>
+        </select>
+        <textarea id="memoirEditContent" placeholder="Edit your memoir here..."></textarea>
+        <button class="pill-button save-btn" onclick="saveMemoirEdit()">Save</button>
+      </div>
+
+      <!-- Remove Section -->
+      <div id="removeSection" style="display:none;">
+        <select id="memoirRemoveSelect">
+          <option value="">Select Memoir Title to Remove</option>
+        </select>
+        <button class="pill-button remove-btn" onclick="removeMemoir()">Remove</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Affirmations App Box -->
+  <section class="app-box">
+    <h2>Affirmations</h2>
+    <div id="affirmationsBox" class="scrollable">
+        <ul class="affirmations-list"></ul>
+    </div>
+    <button class="manage-button" onclick="toggleManageSection('affirmationsSection')" style="display: none">Manage</button>
+    <div id="affirmationsSection" class="manage-section">
+        <textarea id="affirmationInput" placeholder="Enter your affirmation here..."></textarea>
+        <button class="pill-button add-btn" onclick="addAffirmation()">Add</button>
+        <select id="affirmationSelect">
+            <option>Select your affirmation here...</option>
+        </select>
+        <button class="pill-button remove-btn" onclick="removeAffirmation()">Remove</button>
+    </div>
+  </section>
+
+  <!-- Habit Tracker App Box -->
+  <section class="app-box">
+    <h2>Habit Tracker</h2>
+    <div id="habitBox" class="non scrollable">
+        <ul class="habit-list"></ul>
+    </div>
+    <button class="manage-button" onclick="toggleManageSection('habitSection')" style="display: none">Manage</button>
+    <div id="habitSection" class="manage-section">
+        <textarea id="habitInput" placeholder="Enter your habit here..."></textarea>
+        <button class="pill-button add-btn" onclick="addHabit()">Add</button>
+        <select id="habitSelect">
+            <option>Select your habit here...</option>
+        </select>
+        <button class="pill-button remove-btn" onclick="removeHabit()">Remove</button>
+    </div>
+  </section>
+
+  <footer>
+    <p id="footerFeedback" class="feedback">
+      Developed by <span class="highlighted">Prabhakar Singh</span>
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
